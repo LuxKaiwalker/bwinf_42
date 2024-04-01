@@ -1,0 +1,40 @@
+1. alle kompletten Teilgraphen ermitteln.
+
+2. teilgraphen mit höchstem Grad betrachten und packete so formen, dass sie teilgraphen mit zweithöchstem Grad genügen
+etc.
+wenn die teilgraühen gleich mächtig sind, den wählen der mehr unbalanced ist.
+
+wenn nur noch teilgraphen ersten grades übrig bleiben, darf nichts 3mal so viel sein wie alles andere, es darf auch ncihts 0 sein.
+
+--> für beliebigen teilgraphen: kleidungsstücke so verlegen, dass die möglichst gleichmäßig werden vom Verhältnis her.
+man ist dann fertig, wenn nichts mehr 3 mal soviel ist. Wenn man nicht fertig wird, kleinere teilgraphen betrachten. 
+
+  0 1 2 3 4 5 6 7 8
+[[1 1 1 0 0 1 2 0 0]
+ [0 1 0 2 2 3 4 1 0]
+ [0 3 0 0 3 0 1 2 4]]
+
+
+
+
+tatsächcliches vorgehen(v4):
+wir betrachten alle cliquen ohne doppelte knoten und allocaten kleidungsstücke aus relevanten 
+doppelten Knoten so hinze, dass der maximalgewinn (score) am höchsten ist. DAbei sit es egal, 
+wieviele aus den Doppelten Knoten übrig bleiben!
+wieviele braucht es, um jede teilclique maximal zu füllen? (in richtung max_score)
+welche müssen wir aber wegnehmen, weil die anderen dann wichtiger sind?
+
+greedy- ansatz: 
+die am schlechtesten versorgte clique kriegt extra-kleidung, weil das das am meisten unbalancier
+te ist! (aber was wenn der gewinn balancierter cliques trotzdem besser ist?)
+
+
+der ansatz bracht neue Datenstrukturen tho!
+--> 1. erstellen der Datenstruktur:
+mach einen Graph ohne werte, pack da bron kerbosch durch und wenn das klappt erstelle für jede
+clique teilgraphen. so benennen dass mehrfache knoten gleichen namen haben!
+jetzt optimiere das durch das umplatzieren von Kleidung in gleichnamigen Graphen. man braucht 
+dafrü einen bewetungsalg für das gesamt ding und einen greedy schritt. diese muss man noch finden.
+
+
+

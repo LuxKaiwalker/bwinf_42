@@ -1,0 +1,19 @@
+def display_symmetrical_points(n, center_point):
+    center_x, center_y = center_point
+    grid = [['.' for _ in range(n)] for _ in range(n)]
+
+    for i in range(n):
+        for j in range(n):
+            symmetrical_x = center_x - (i - center_x)
+            symmetrical_y = center_y - (j - center_y)
+
+            if 0 <= symmetrical_x < n and 0 <= symmetrical_y < n:
+                grid[i][j] = '*'
+
+    for row in grid:
+        print(' '.join(row))
+
+# Example usage with a 5*5 grid and center point (1,2)
+n = 5
+center_point = (1, 2)
+display_symmetrical_points(n, center_point)

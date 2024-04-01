@@ -1,0 +1,48 @@
+idee:
+Dijkstra beutzen.
+import math
+1. scan der gesamten Fläche. Jeden Knoten K mit nachbarn+weight initialisieren.
+graph[
+    knoten[
+        nachbarn[
+            name,
+            cost
+        ]
+    ]
+]
+
+start_knot = "INPUT"
+
+2.
+dist = []
+vorgaenger = []
+G = []
+for counter in range(len(graph)):
+    G.append(graph[counter])
+    dist.append(math.inf)
+    vorgaenger.append(0)
+dist[start_knot] = 0
+
+3. using method update_dist:
+
+def update_dist(current, neighbour):
+    if dist[v]>dist[u]+graph[v][0]:
+        dist_v = dist[u]+graph[v][0]
+        vorgaenger[v] = u
+    else:
+        pass
+
+4. 
+
+def main():
+
+    while (G.size>0):
+        u = min dist count
+        get rid of u in G
+
+        for v in graph[u]:
+            if v is in G:
+                update_dist(u, v)
+            else:
+                pass
+    return vorgaenger[ziel]
